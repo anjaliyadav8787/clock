@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="clock.css">
+
+    
+  </head>
+  <body>
+    <div class="content">
+      <h1>This is a Alarm clock application</h1>
+    </div>
+
+    <!--******************************************************************************-->
+    <!-- <audio controls loop src="mixkit-facility-alarm-sound-999 (1).wav"></audio> -->
+    <audio  loop src="mixkit-facility-alarm-sound-999.wav.mp3"></audio>
+
+
+
+    <div class="box1">
+      <div class="digitalClock"></div>
+      <div class="box1Bottom">
+        <input onchange="getTimer(this.value)" type="datetime-local" />
+
+        <div class="btnBox">
+          <button onclick="startAlarm()">Start</button>
+          <button onclick="stopAlarm()">Stop</button>
+        </div>
+      </div>
+  </div>
+<!-- ********************************************************************************** -->
+      <div class="box2 active">
+        <div class="analogClock">
+          <div class="min"></div>
+          <div class="hr"></div>
+          <div class="second"></div>
+          <div class="pointer"></div>
+        </div>
+    
+      <div class="box1Bottom">
+        <input onchange="getTimer(this.value)" type="datetime-local" />
+        <div class="btnBox">
+          <button onclick="startAlarm()">Start</button>
+          <button onclick="stopAlarm()">Stop</button>
+        </div>
+      </div>
+    </div>
+<!-- ***********************************clock********************************* -->
+<button onclick="handleSwap()" class="btnSwap">Swap Clock</button>
+
+    <script>
+      setInterval(() => {
+        let date = new Date();
+        // console.log(date)
+
+        let hour = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+
+        // console.log(`${hour}: ${minutes}: ${seconds}`)
+
+        if (seconds < 10) {
+          seconds = `0${seconds}`;
+        }
+
+        //  digitalClock.append(`${hour}:${minutes}:${seconds}`)
+        digitalClock.innerHTML = `${hour} : ${minutes} : ${seconds}`;
+      }, 1000);
+
+      let audio = new Audio();
+      audio.src = "mixkit-facility-alarm-sound-999.wav.mp3";
+      let alarmTime;
+        
+      function getTimer(value) {
+        alarmTime = value;
+      }
+
+      let x;
+      function startAlarm() {
+        // console.log(value)
+        // console.log(alarmTime)
+        let currentTime = new Date();
+        let timeGap = new Date(alarmTime) - currentTime;
+
+          if (timeGap <= 0) {
+      alert("Please select a future time!");
+      return;
+    }
+
+        alert("alarm is set");
+        x = setTimeout(() => {
+          audio.play();
+          audio.loop = true;
+        }, timeGap);
+      }
+
+
+      function stopAlarm() {
+        clearTimeout(x);
+        audio.pause();
+        audio.currentTime = 0;
+        alert("alarm is stopped");
+      }
+      // ******************************************************************************************
+
+      let hrNeedle = document.querySelector(".hr");
+      let minNeedle = document.querySelector(".min");
+      let secondNeedle = document.querySelector(".second");
+      let digitalClock = document.querySelector(".digitalClock");
+
+      setInterval(() => {
+        let date = new Date();
+
+        let seconds = date.getSeconds();
+        let hour = date.getHours();
+        let minutes = date.getMinutes();
+
+        let secInDeg = seconds * 6;
+        let hrDeg = hour * 30;
+
+        secondNeedle.style.transform = `rotate(${secInDeg}deg)`;
+        hrNeedle.style.transform = `rotate(${hrDeg}deg)`;
+        minNeedle.style.transform = `rotate(${minutes * 6}deg)`;
+
+        if (seconds < 10) {
+          seconds = 0`${seconds}`;
+        }
+        digitalClock.innerHTML = `${hour} : ${minutes} : ${seconds}`;
+      }, 1000);
+
+// *************************************************************************************
+ let box1=document.querySelector('.box1')
+ let box2=document.querySelector('.box2')
+
+      const handleSwap = () => {
+        box1.classList.toggle('active')
+        box2.classList.toggle('active')
+
+
+      }
+    </script>
+  </body>
+</html>
