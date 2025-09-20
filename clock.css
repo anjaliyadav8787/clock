@@ -3,17 +3,20 @@
         padding: 0;
         box-sizing: border-box;
       }
-    .content h1{
-      margin-top: 30px;
-    }
       body {
         height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         background-color: black;
         width: 100%;
       }
+
+
+      .anjali{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
       .digitalClock {
         height: 300px;
         width: 500px;
@@ -28,13 +31,11 @@
         background-clip: text;
         color: transparent;
       }
-
       .box1Bottom {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 10px;
-        /* gap: 20px; */
       }
       .btnBox {
         margin-top: 10px;
@@ -73,14 +74,12 @@
       .analogClock {
         border: 2px solid goldenrod;
         border-radius: 100%;
-        height: 400px;
-        width: 400px;
+        height: 330px;
+        width: 330px;
         position: absolute;
         /* right:0; */
         margin-left: 30px;
         background-image: url(https://png.pngtree.com/png-clipart/20220708/ourmid/pngtree-clock-face-no-hands-big-roboto-font-new-png-image_5781616.png);
-        /* background-repeat: no-repeat;
-    background-position: center; */
         background-size: 100% 100%;
         position: relative;
         background-color: white;
@@ -169,30 +168,24 @@
          color: transparent;
          font-size: 2vw;
          text-transform: uppercase;
-         /* font-style: italic; */
-         position: absolute;
-         top: 0;
-        
-         
+         text-align: center;  
       }
      
       @media (min-width:344px) and (max-width:575px) {
       .content h1{
-      margin: auto;
+      text-align: center;
       font-size: 1rem;
-      width: 100%;
-      padding: 20px 0px;
+  
     }
 
     .digitalClock {
         height: 200px;
-        width: 480px;
-
+        width: 300px;
       }
 
       .analogClock {
-        height: 280px;
-        width: 280px;
+        height: 250px;
+        width: 250px;
         
       }
       .digitalClock{
@@ -200,32 +193,45 @@
       }
 
        body {
-        height: 90vh;
+        height: 100vh;
         width: 100%;
       }
 
       .btnSwap{
-        bottom: 100px;
+        bottom: 30px;
       }
 
       .box1Bottom {
-        margin-top: .0px;
+        margin-top: 30px;
       }
+       .min {
+        height: 80px;
+      }
+
+      .second {
+        height: 90px;
+      
+      }
+
+      .hr {
+        height:75px;
+      }
+
         
       }
 
       @media(min-width: 576px) and (max-width: 767px) { 
-     .content h1{
+    .content h1{
       margin: auto;
-      font-size: 1.3rem;
+      font-size: 2rem;
       width: 100%;
-      padding: 50px 0px;
+      /* padding: 10px 0px; */
     }
 
     .digitalClock {
-        height: 200px;
+        height: 260px;
         width: 430px;
-        border: 6px dotted goldenrod;
+        border: 6px dotted yellow;
         
       }
 
@@ -240,18 +246,30 @@
       }
 
        body {
-        height: 90vh;
+        height: 100vh;
        
       }
   
        
      button.btnSwap{
-        bottom: 300px;
+        bottom: 50px;
         margin: auto;
       }
 
       .box1Bottom {
         margin-top: 50px;
+      }
+      .min {
+        height: 80px;
+      }
+
+      .second {
+        height: 90px;
+      
+      }
+
+      .hr {
+        height:75px;
       }
 
        }
@@ -305,12 +323,11 @@
         color: white;
         
       }
-
-       .btnSwap{
-        font-size: 35px;
-        color: white;
-
+ button.btnSwap{
+        bottom: 20px;
+        margin: auto;
       }
+      
 }
 
 @media (min-width:992px) and (max-width:1199px){
@@ -320,22 +337,25 @@
       }
 
       .content h1{
-        font-size: 2rem;
+        font-size: 3rem;
         margin-top: 80px;
         text-align: center;
         color: yellow;
       }
        .digitalClock {
-        height: 400px;
+        height: 500px;
         width: 830px;
         border: 5px dotted goldenrod;
         font-size: 7rem;
-        margin-top: 100px;
+        /* margin-top: 100px; */
+        margin-bottom: 100px;
       }
 
       .box1Bottom input {
-        margin-top: 50px;
-        font-size: 2rem;
+        /* margin-top: 50px; */
+        font-size: 3rem;
+        padding: 30px 10px;
+        margin-top: 5px;
       }
 
          .btnBox {
@@ -358,7 +378,22 @@
        .btnSwap{
         font-size: 45px;
         color: white;
-        margin-bottom: 100px;
+        margin-bottom: 0px;
+      }
+
+       .analogClock {
+        border: 2px solid goldenrod;
+        border-radius: 100%;
+        height: 530px;
+        width: 530px;
+        position: absolute;
+        /* right:0; */
+       bottom: 160px;
+        margin-left: 30px;
+        background-image: url(https://png.pngtree.com/png-clipart/20220708/ourmid/pngtree-clock-face-no-hands-big-roboto-font-new-png-image_5781616.png);
+        background-size: 100% 100%;
+        position: relative;
+        background-color: white;
       }
     
 }

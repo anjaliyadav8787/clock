@@ -4,28 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-
     <link rel="stylesheet" href="clock.css">
-
-    
   </head>
   <body>
     <div class="content">
       <h1>This is a Alarm clock application</h1>
     </div>
-
     <!--******************************************************************************-->
     <!-- <audio controls loop src="mixkit-facility-alarm-sound-999 (1).wav"></audio> -->
     <audio  loop src="mixkit-facility-alarm-sound-999.wav.mp3"></audio>
-
-
-
+  <div class="anjali">
     <div class="box1">
       <div class="digitalClock"></div>
       <div class="box1Bottom">
         <input onchange="getTimer(this.value)" type="datetime-local" />
-
-        <div class="btnBox">
+          <div class="btnBox">
           <button onclick="startAlarm()">Start</button>
           <button onclick="stopAlarm()">Stop</button>
         </div>
@@ -47,6 +40,7 @@
           <button onclick="stopAlarm()">Stop</button>
         </div>
       </div>
+    </div>
     </div>
 <!-- ***********************************clock********************************* -->
 <button onclick="handleSwap()" class="btnSwap">Swap Clock</button>
@@ -142,5 +136,6 @@
 
       }
     </script>
+    
   </body>
 </html>
