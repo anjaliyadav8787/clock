@@ -175,12 +175,16 @@
       .content h1{
       text-align: center;
       font-size: 1rem;
+      color: yellow;
+
   
     }
 
     .digitalClock {
         height: 200px;
         width: 300px;
+        background-image:yellow;
+
       }
 
       .analogClock {
@@ -225,7 +229,8 @@
       margin: auto;
       font-size: 2rem;
       width: 100%;
-      /* padding: 10px 0px; */
+      color: yellow;
+
     }
 
     .digitalClock {
@@ -293,6 +298,8 @@
         border: 5px dotted goldenrod;
         font-size: 7rem;
         margin-top: 80px;
+        background-image:yellow;
+
       }
 
       .box1Bottom input {
@@ -349,6 +356,8 @@
         font-size: 7rem;
         /* margin-top: 100px; */
         margin-bottom: 100px;
+        background-image:yellow;
+
       }
 
       .box1Bottom input {
